@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nb">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kontakt oss</title>
+        <script type="text/javascript" src="functions.js"></script>
+    </head>
+    <body>
+        <header style="background-color: lightblue; border-radius: 10px;">
+            <a href="index.html"><h1 style="margin: 1%;">TV</h1></a>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">Hjem</a>
+                    </li>
+                    <li>
+                        <a href="https://google.com" target="_blank">Google</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Kontakt oss</a>
+                    </li>
+                    <li>
+                        <a href="about.html">Om oss</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>Kontakt oss</h2>
+            </section>
+            <section>
+                <h2>Ta Kontakt med oss i dag</h2>
+                <form method="post" action="functions.js">
+                    <label for="navn">Navn:</label>
+                    <input type="text" name="navn" placeholder="Nora Nordmann.." id="navn" maxlength="45" required>
+
+                    <label>
+                        E-post:
+                        <input type="email" name="email" placeholder="eksempel@hiof.no" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                    </label>
+                    <label>
+                        Emne:
+                        <input type="text" name="emne" placeholder="Hva handler det om?">
+                    </label>
+                    <label>
+                        Melding:
+                        <textarea name="melding" required></textarea>
+                    </label>
+                    <label>
+                        Nei
+                        <input type="radio" name="valg">
+                    </label>
+                    <label>
+                        Ja
+                        <input type="radio" name="valg">
+                    </label>
+                    <label>
+                        Kanskje
+                        <input type="radio" name="valg">
+                    </label>
+                    <input type="button" value="Send melding" onclick="NameLabel()">
+                    <label>
+                        Favoritt mat:
+                        <select>
+                            <option value="pizza">Pizza</option>
+                            <option value="taco">Taco</option>
+                            <option value="risotto">Risotto</option>
+                        </select>
+                    </label>
+                    <label id="navnLabel">Navn</label>
+                </form>
+            </section>
+        </main>
+        <footer>Nicolai 2024</footer>
+    </body>
+</html>
