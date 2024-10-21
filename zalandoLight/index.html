@@ -3,95 +3,116 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="ikoner/fontawesome-free-6.6.0-web/css/fontawesome.css" rel="stylesheet" />
+        <link href="ikoner/fontawesome-free-6.6.0-web/css/brands.css" rel="stylesheet" />
+        <link href="ikoner/fontawesome-free-6.6.0-web/css/solid.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/style.css">
         <title>Zalando Light | Forside</title>
     </head>
     <body>
-        <header>
-            <img src="img/Zalando-Logo.png" alt="Nettsted logo">
-            <nav>
-                <ul>
-                    <li><a href="#">Nyheter</a></li>
-                    <li><a href="#">Nordisk stil</a></li>
-                    <li><a href="#">Klær</a></li>
-                    <li><a href="sko.html">Sko</a></li>
-                    <li><a href="#">Accessories</a></li>
-                    <li><a href="#">Streetwear</a></li>
-                    <li><a href="#">Sport</a></li>
-                    <li><a href="#">Designer</a></li>
-                    <li><a href="#">Outlet</a></li>
-                </ul>
-                <form>
-                    <label for="search">Søk</label>
-                    <input type="search" id="search" placeholder="Her kan du søke etter produkter...">
-                    <input type="submit" value="søk">
-                </form>
-            </nav>
-        </header>
-        <main>
-            <section>
-                <h2>Våre beste deals</h2>
-                <a href="#">Shop nå -></a>
-                <img src="img/powerup.jpg" alt="Våre beste deals">
-            </section>
-            <section>
-                <h2>Produkter</h2>
-                <article>
-                    <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
-                    <a href="#">Nike Performance</a>
-                    <a href="#"><h3>ZOOM BELLA 6</h3></a>
-                    <p>999 kr</p>
-                </article>
-                <article>
-                    <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
-                    <a href="#">Nike Performance</a>
-                    <a href="#"><h3>ZOOM BELLA 6</h3></a>
-                    <p>999 kr</p>
-                </article>
-                <article>
-                    <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
-                    <a href="#">Nike Performance</a>
-                    <a href="#"><h3>ZOOM BELLA 6</h3></a>
-                    <p>999 kr</p>
-                </article>
-                <article>
-                    <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
-                    <a href="#">Nike Performance</a>
-                    <a href="#"><h3>ZOOM BELLA 6</h3></a>
-                    <p>999 kr</p>
-                </article>
-                <article>
-                    <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
-                    <a href="#">Nike Performance</a>
-                    <a href="#"><h3>ZOOM BELLA 6</h3></a>
-                    <p>999 kr</p>
-                </article>
-                <article>
-                    <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
-                    <a href="#">Nike Performance</a>
-                    <a href="#"><h3>ZOOM BELLA 6</h3></a>
-                    <p>999 kr</p>
-                </article>
-                <article>
-                    <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
-                    <a href="#">Nike Performance</a>
-                    <a href="#"><h3>ZOOM BELLA 6</h3></a>
-                    <p>999 kr</p>
-                </article>
-                <article>
-                    <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
-                    <a href="#">Nike Performance</a>
-                    <a href="#"><h3>ZOOM BELLA 6</h3></a>
-                    <p>999 kr</p>
-                </article>
-                <article>
-                    <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
-                    <a href="#">Nike Performance</a>
-                    <a href="#"><h3>ZOOM BELLA 6</h3></a>
-                    <p>999 kr</p>
-                </article>
-            </section>
-        </main>
-        <footer>Zalando Light 2024</footer>
+        <div id="grid-container">
+            <header id="global-header">
+                <img id="main-logo" src="img/Zalando-Logo.png" alt="Nettsted logo">
+                <nav class="flex-space-b">
+                    <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+                    <ul class="flex-menu" id="menu">
+                        <li><a href="#">Nyheter</a></li>
+                        <li><a href="#">Nordisk stil</a></li>
+                        <li><a href="#">Klær</a></li>
+                        <li><a href="sko.html">Sko</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Streetwear</a></li>
+                        <li><a href="#">Sport</a></li>
+                        <li><a href="#">Designer</a></li>
+                        <li><a href="#" id="outlet">Outlet</a></li>
+                    </ul>
+                    <form>
+                        <label for="search">Søk</label>
+                        <input type="search" id="search" placeholder="Her kan du søke etter produkter...">
+                        <input type="submit" value="søk">
+                    </form>
+                </nav>
+            </header>
+            <main>
+                <section id="banner">
+                    <div>
+                        <h2>Våre beste deals</h2>
+                        <a href="#">Shop nå -></a>
+                    </div>
+                    <img src="img/powerup.jpg" alt="Våre beste deals">
+                </section>
+                <section class="flex-space-b">
+                    <h2>Produkter</h2>
+                    <article class="product-card">
+                        <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
+                        <a href="#">Nike Performance</a>
+                        <a href="#"><h3>ZOOM BELLA 6</h3></a>
+                        <p>999 kr</p>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
+                        <a href="#">Nike Performance</a>
+                        <a href="#"><h3>ZOOM BELLA 6</h3></a>
+                        <p>999 kr</p>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
+                        <a href="#">Nike Performance</a>
+                        <a href="#"><h3>ZOOM BELLA 6</h3></a>
+                        <p>999 kr</p>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
+                        <a href="#">Nike Performance</a>
+                        <a href="#"><h3>ZOOM BELLA 6</h3></a>
+                        <p>999 kr</p>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
+                        <a href="#">Nike Performance</a>
+                        <a href="#"><h3>ZOOM BELLA 6</h3></a>
+                        <p>999 kr</p>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
+                        <a href="#">Nike Performance</a>
+                        <a href="#"><h3>ZOOM BELLA 6</h3></a>
+                        <p>999 kr</p>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
+                        <a href="#">Nike Performance</a>
+                        <a href="#"><h3>ZOOM BELLA 6</h3></a>
+                        <p>999 kr</p>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
+                        <a href="#">Nike Performance</a>
+                        <a href="#"><h3>ZOOM BELLA 6</h3></a>
+                        <p>999 kr</p>
+                    </article>
+                    <article class="product-card">
+                        <img src="img/produktbilde.jpg" alt="Nike Performance ZOOM BELLA 6 - Treningssko - Sort">
+                        <a href="#">Nike Performance</a>
+                        <a href="#"><h3>ZOOM BELLA 6</h3></a>
+                        <p>999 kr</p>
+                    </article>
+                </section>
+            </main>
+            <footer>Zalando Light 2024</footer>
+        </div>
+        <script>
+            let toggleMenu = () => {
+                let x = document.getElementById("menu")
+
+                if (x.style.display === "flex") {
+                    x.style.display = "none"
+                }
+
+                else {
+                    x.style.display = "flex"
+                }
+            }
+        </script>
     </body>
 </html>

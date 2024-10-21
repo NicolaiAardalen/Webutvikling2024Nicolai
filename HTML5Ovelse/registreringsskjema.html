@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="nb">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Registrerisngsskjema</title>
+    </head>
+    <body>
+        <header>
+            <h1>Overskrift</h1>
+            <nav class="flex-space-b">
+                <ul class="flex-menu">
+                    <li><a href="index.html">Hjem</a></li>
+                    <li><a href="about.html">Om Meg</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="Validering.html">Validering</a></li>
+                    <li><a href="Nettside-mal.html">Mal</a></li>
+                    <li><a href="oppskrift.html">Oppskrift</a></li>
+                    <li><a href="registreringsskjema.html">Registreringsskjema</a></li>
+                    <li><a href="studieplan.html">Studieplan</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>Registrerisngsskjema</h2>
+                <form method="post" action="functions.js">
+                    <label for="navn">Navn:</label>
+                    <input type="text" name="navn" placeholder="Ditt navn.." id="navn" maxlength="45" pattern="[A-Za-zæøåÆØÅ ]{2,}" required>
+
+                    <label for="email">E-post:</label>
+                    <input type="email" name="email" id="email" placeholder="eksempel@hiof.no" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                    
+
+                    
+                    <label for="passord">Passord:</label>
+                    <input type="password" name="passord" id="passord" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+
+                    <label for="alder">Alder:</label>
+                    <input type="number" name="alder" id="alder" min="18" max="99" required>
+ 
+
+                    <label for="telefonnummer">Telefonnummer:</label>
+                    <input type="tel" name="telefonnummer" id="telefonnummer" pattern="[0-9]{8,12}" required>
+
+                    <label for="fødselsdato">Fødselsdato:</label>
+                    <input type="date" name="fødselsdato" id="fødselsdato" max="2023-12-31" required>
+
+                    <label for="mann">Kjønn:</label>
+                    <input type="radio" id="mann" name="kjønn" value="mann" required>
+                    <label for="mann">Mann</label>
+                    <input type="radio" id="kvinne" name="kjønn" value="kvinne" required>
+                    <label for="kvinne">Kvinne</label>
+                    <input type="radio" id="annet" name="kjønn" value="annet" required>
+                    <label for="annet">Annet</label>
+
+                    <label for="land">Land:</label>
+                    <select name="land" id="land" required>
+                        <option value="" disabled selected>Velg ditt land</option>
+                        <option value="norge">Norge</option>
+                        <option value="sverige">Sverige</option>
+                        <option value="danmark">Danmark</option>
+                    </select>
+
+                    <label for="personvern">Personvern:</label>
+                    <input type="checkbox" name="personvern" id="personvern" required>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </section>
+        </main>
+        <aside>
+            
+        </aside>
+        <footer>
+            <p>Kontakt meg på epost: <a href="mailto:naaardal@hiof.no">naaardal@hiof.no</a></p>
+            <p>&copy; 2024 Nicolai Aardalen</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+@use 'design' as *;
+@use 'layout' as *;
+
+form {
+    color: $black;
+    @extend .blurred-effect;
+    @include flexbox(column, nowrap, 1rem);
+    @include box(600px, auto, 3rem, 30px);
+
+    label {
+        @include box(100%, auto, 1rem, 50px);
+        @include flexbox(row, nowrap, 1rem);
+        background-color: #fff;
+
+        i {
+            @include box(50px, 50px, 0.5rem, 100%);
+            @extend .flex-container-center;
+            display: flex !important;
+            width: 50px;
+            background-color: $black;
+            color: $white;
+        }
+
+        input {
+            border: none;
+        }
+    }
+
+    input {
+        @include box(200px, auto, 1rem, 10px);
+        background-color: $black;
+    }
+}
