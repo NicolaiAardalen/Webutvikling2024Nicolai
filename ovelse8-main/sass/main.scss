@@ -8,7 +8,6 @@
 body {
     padding: 1rem;
     margin: 0;
-    min-height: 100vh;
 }
 
 header {
@@ -25,41 +24,23 @@ header {
     }
 }
 
-#nav-div {
+nav {
     background-color: rgb(1, 60, 1);
     margin: 0;
     padding: 2rem;
     border-radius: 3rem;
     position: fixed;
     bottom: 1rem;
-    width: 47.7%;
+    width: calc(100% - 2rem);
     z-index: 999;
-}
-
-nav {
-    
 
     ul {
         display: flex;
         margin: 0;
         padding: 0;
         list-style: none;
-        gap: 4.5rem;
+        gap: 3.5rem;
         justify-content: center;
-
-        
-        /*z-index: 999;
-        bottom: 1rem;
-        top: 100vh 0;
-        position: fixed;
-        display: flex;
-        list-style: none;
-        gap: 5rem;
-        justify-content: center;
-        background-color: rgb(1, 60, 1);
-        border-radius: 3rem;
-        padding: 2rem 2rem;
-        margin: 0 auto; */
 
         li {
 
@@ -93,7 +74,6 @@ nav {
 
         h1 {
             font-size: 2rem;
-            opacity: 1;
         }
 
         a {
@@ -155,7 +135,7 @@ nav {
 #news {
 
     h2 {
-        margin: 2rem 0;
+        margin: 2rem 0 -1rem 0;
     }
 
     .scroll-container {
@@ -163,14 +143,14 @@ nav {
         flex-wrap: nowrap;
         gap: 1rem;
         overflow: scroll;
-        width: 100%;
 
         article {
 
             a {
 
                 i {
-                    position: absolute;
+                    position: relative;
+                    top: 10%;
                     color: white;
                     padding: 0.6rem;
                     font-size: 1.5rem;
@@ -214,7 +194,6 @@ nav {
 
 footer {
     border-top: solid lightgray;
-    border-style: round;
     margin: 2rem 0 0 0;
     padding: 2rem 2rem 6rem 2rem;
     display: flex;
