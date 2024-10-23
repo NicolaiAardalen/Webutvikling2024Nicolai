@@ -135,7 +135,7 @@ nav {
 #news {
 
     h2 {
-        margin: 2rem 0 -1rem 0;
+        margin: 2rem 0;
     }
 
     .scroll-container {
@@ -143,14 +143,14 @@ nav {
         flex-wrap: nowrap;
         gap: 1rem;
         overflow: scroll;
+        position: relative;
 
         article {
 
             a {
 
                 i {
-                    position: relative;
-                    top: 10%;
+                    position: absolute;
                     color: white;
                     padding: 0.6rem;
                     font-size: 1.5rem;
