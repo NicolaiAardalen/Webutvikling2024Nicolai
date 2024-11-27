@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap');
+/* Hva: Importerer skrifttypene Montserrat og Roboto fra Google Fonts.
+   Hvorfor: Disse skriftene gir nettsiden et moderne og profesjonelt utseende.
+   Hvordan: @import brukes til å hente inn skriftene direkte i CSS-filen fra Google Fonts.
+*/
+
+$mainFont: "Montserrat", sans-serif;
+/* Hva: Definerer en SCSS-variabel for hovedfonten.
+   Hvorfor: For å sikre konsistent typografi på tvers av hele nettstedet og gjøre det enkelt å endre font senere hvis nødvendig.
+   Hvordan: SCSS-variabelen lagres som $mainFont, og kan gjenbrukes overalt i stilen.
+*/
+
+@mixin grid-placement($column, $row){
+    grid-column: #{$column};
+    grid-row: #{$row};
+}
+/* Hva: Definerer en SCSS-mixin for gridplassering.
+   Hvorfor: For å gjøre det enklere å plassere elementer i et CSS-grid ved å spesifisere kolonne og rad.
+   Hvordan: Mixinen tar to parametere ($column og $row) som settes som verdier for grid-column og grid-row.
+*/
+
+*{
+    box-sizing: border-box;
+}
+/* Hva: Setter box-sizing til border-box for alle elementer.
+   Hvorfor: Gjør det enklere å kontrollere bredde og høyde fordi padding og border blir inkludert i elementets totale bredde og høyde.
+   Hvordan: CSS-universalvelger (*) brukes for å påvirke alle elementer på siden.
+*/
+
+body{
+    font-family: $mainFont;
+    margin: 0;
+}
+/* Hva: Setter standardfonten og fjerner margin på body-elementet.
+   Hvorfor: Sikrer at hele siden bruker samme font, og fjerner standardmargin for bedre kontroll over layout.
+   Hvordan: Bruker $mainFont-variabelen, satt til Montserrat.
+*/
+
+#container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+/* Hva: Konfigurerer en container for hovedinnholdet.
+   Hvorfor: Begrenser sidens bredde til maksimalt 1200px for bedre lesbarhet, og sentrerer den horisontalt.
+   Hvordan: Setter margin til 0 auto for å sentrere containeren og max-width til 1200px.
+*/
+
+header{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+/* Hva: Styler headeren med padding og sentrering.
+   Hvorfor: Gir headeren god avstand rundt innholdet og sentrerer det.
+   Hvordan: Flexbox brukes med justify-content for å sentrere innholdet horisontalt.
+*/
+
+main{
+    padding: 1rem;
+
+    section{
+        padding: 1rem 0;
+    }
+}
+/* Hva: Legger padding til main og dens seksjoner.
+   Hvorfor: Gir god avstand mellom seksjonene og innholdet.
+   Hvordan: Padding på section-elementene skaper vertikal avstand mellom seksjonene.
+*/
+
+nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 999;
+    /* Hva: Fikserer navigasjonen nederst på skjermen.
+       Hvorfor: Gjør navigasjonen lett tilgjengelig uansett hvor brukeren scroller.
+       Hvordan: position: fixed for å holde den fast, og z-index for å sikre at den er øverst.
+    */
+
+    ul{
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        gap: 1rem;
+        width: 100%;
+        justify-content: space-around;
+        margin: 0px auto;
+        padding: 2rem;
+        background-color: #26624b;
+        border-radius: 61px;
+        /* Hva: Styler ul for navigasjonselementer.
+           Hvorfor: Gir en fleksibel layout som fordeler elementene jevnt og rundes av for moderne design.
+           Hvordan: Flexbox fordeler elementene, og background-color gir en kontrasterende farge.
+        */
+
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        /* Hva: Fjerner understrek på lenker og setter hvit tekst.
+           Hvorfor: Bedrer utseendet og kontrasten mot bakgrunnsfargen.
+           Hvordan: text-decoration: none og color gir hvit tekstfarge.
+        */
+
+        i{
+            font-size: 20px;
+        }
+        span{
+            display: none;
+        }
+        /* Hva: Skjuler span-tekst ved mobilvisning.
+           Hvorfor: Forenkler visningen på små skjermer, der ikonene alene er nok.
+           Hvordan: Setter display: none på span.
+        */
+    }
+}
+
+#welcome-banner{
+    background-image: url('https://picsum.photos/id/36/1200/600');
+    background-size: cover;
+    padding: 0;
+    border-radius: 25px;
+    /* Hva: Lager et velkomstbanner med et bakgrunnsbilde.
+       Hvorfor: Banneret gir en visuell introduksjon til siden.
+       Hvordan: Bakgrunnsbildet dekker hele området, og border-radius avrunder kantene.
+    */
+
+    header{
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        height: 300px;
+        background-color: rgba(255, 255, 255, 0.5);
+        align-items: center;
+        flex-direction: column;
+    }
+    /* Hva: Styler headeren i velkomstbanneret.
+       Hvorfor: Plasserer innhold sentrert og gir et lett transparent bakgrunnslag.
+       Hvordan: Flexbox sentrerer innholdet, og background-color lager en halvtransparent hvit bakgrunn.
+    */
+}
+
+#categories{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 1rem;
+    /* Hva: Oppretter et grid-layout for kategoriseksjonen.
+       Hvorfor: Deler inn kategoriene i et lettlest og strukturert grid.
+       Hvordan: CSS Grid med to kolonner og tre rader, og gap for avstand.
+    */
+
+    article{
+        background-color: #efefef;
+        padding: 1rem;
+        border-radius: 25px;
+        min-height: 200px;
+        display: flex;
+        align-items: end;
+    }
+    /* Hva: Styler hver kategoriartikkel.
+       Hvorfor: Gir en bakgrunnsfarge og runder av kantene for moderne utseende.
+       Hvordan: Flexbox plasserer innholdet nederst i artikkelen.
+    */
+
+    h2{
+        @include grid-placement("1/3","1/2");
+    }
+    #el{
+        @include grid-placement("1/2", "2/4");
+    }
+    #fashion{
+        @include grid-placement("2/3","2/3");
+    }
+    #home{
+        @include grid-placement("2/3","3/4");
+    }
+    /* Hva: Plasserer kategoriene spesifikt i grid-layouten.
+       Hvorfor: Bestemmer plasseringen av hver kategori i gridet.
+       Hvordan: Bruker grid-placement-mixinen for å plassere hver kategori på en spesifikk kolonne og rad.
+    */
+}
+
+#news{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /* Hva: Setter layouten til flex med wrap for nyhetsseksjonen.
+       Hvorfor: For å gjøre det enkelt å pakke inn artikler på mindre skjermer.
+       Hvordan: Flexbox brukes for layout, med gap for avstand mellom artikler.
+    */
+
+    .scroll-container{
+        display: flex;
+        gap: 1rem;
+        overflow: scroll;
+        /* Hva: Gjør det mulig å scrolle horisontalt gjennom nyheter.
+           Hvorfor: For å vise flere artikler uten å ta mye vertikal plass.
+           Hvordan: Bruker overflow: scroll for å lage horisontal scrolling.
+        */
+
+        article{
+            min-width: 250px;
+
+            a{
+                position: relative;
+                display: inline-block;
+                color: #fff;
+                i{
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    font-size: 30px;
+                }
+            }
+            /* Hva: Styler lenker i nyhetsartiklene.
+               Hvorfor: For å gjøre favorittikonet synlig i hvert produktbilde.
+               Hvordan: Posisjonerer ikonene absolutt i hjørnet av bildet.
+            */
+
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0.5rem 0;
+                li{
+                    &:first-child {
+                        color: #a6a6a6;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+            /* Hva: Fjerner listeoppsett og legger til styling for produktinfo.
+               Hvorfor: For et renere, listefritt oppsett.
+               Hvordan: Setter list-style til none og legger til tekstendringer.
+            */
+        }
+    }
+
+    h2{
+        width: 100%;
+        margin: 0;
+    }
+}
+
+#popular{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    article{
+        flex-basis: 35%;
+        flex-grow: 1;
+        min-width: 150px;
+    }
+    /* Hva: Layout for populære kategorier.
+       Hvorfor: Lar seksjonen tilpasse seg skjermstørrelse.
+       Hvordan: Bruker flexbox og flex-grow for skalerbar layout.
+    */
+}
+
+.logo{
+    height: 100px;
+    display: inline-block;
+    border-radius: 100%;
+    overflow: hidden;
+}
+/* Hva: Lager et rundt logobilde.
+   Hvorfor: Gir nettsiden et rent, moderne utseende.
+   Hvordan: Border-radius settes til 100% for runde hjørner.
+*/
+
+img{
+    width: 100%;
+    border-radius: 25px;
+}
+/* Hva: Får alle bilder til å fylle sin container fullt ut og avrunder hjørnene.
+   Hvorfor: For et rent og mykere design.
+   Hvordan: Width 100% og border-radius for runde hjørner.
+*/
+
+h2{
+    flex-basis: 100%;
+}
+/* Hva: Sikrer at h2-overskrifter tar hele bredden.
+   Hvorfor: For å skape et tydelig skille mellom seksjoner.
+   Hvordan: Setter flex-basis til 100% for full bredde.
+*/
+
+footer{
+    padding: 2rem 2rem 9rem 2rem;
+    border-top: 1px solid #a0a0a0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .some {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        gap: 1rem;
+
+        i{
+            font-size: 20px;
+        }
+    }
+}
+/* Hva: Styler footeren med padding og sentrering av innhold.
+   Hvorfor: For å skape et klart avslutningselement nederst på siden.
+   Hvordan: Flexbox og border-top lager et ryddig og sentrert footeroppsett.
+*/
+
+.btn{
+    display: inline-block;
+    padding: 1rem;
+    background-color: #2c2c2c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+}
+/* Hva: Lager en knappstil.
+   Hvorfor: For å gjøre klikkbare elementer tydeligere og mer interaktive.
+   Hvordan: Gir bakgrunnsfarge, avrundede hjørner og padding.
+*/
+
+@media only screen and (min-width:800px){
+    nav{
+        position: relative;
+
+        ul{ 
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+
+                span{
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+/* Hva: Medieforespørsel som tilpasser layouten for større skjermer.
+   Hvorfor: Optimaliserer layout for desktopvisning.
+   Hvordan: Gir større skjermer mer rom for å vise både ikoner og tekst.
+*/
